@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>canvasDemo</title>
+	<style type="text/css">
+		/* .demo{
+			width: 20px;
+			display: block;
+			margin: 0 auto;
+		} */
+		
+	</style>
+	<script type="text/javascript">
+		window.onload=function(){//记得加这个onload
+			var canvas=document.getElementById('canvas1');
+			/*var context=canvas.getContext('2d'); 
+			canvas.width="1024";
+			canvas.height="500";*/
+			if(canvas.getContext){
+				var context=canvas.getContext('2d'); 
+			}
+			else{
+				alert('当前浏览器不支持canvas，请更换浏览器后再试');
+			}
+		}
+	</script>
+</head>
+<body>
+	<!-- canvas是行内元素，有默认的高宽（300px*150px），display: block可以把它变成块级元素从而可以设置为水平居中 -->
+	<canvas id="canvas1" width="1024" height="500" style="border: 1px solid #000;display: block;margin: 50px auto">
+		当前浏览器不支持canvas，请更换浏览器后再试
+	</canvas><!--这种方法比较靠谱-->
+	<!-- canvas有显示的大小，还有内里分辨率的大小，所以不能在css中设置 -->
+	<!-- <a class="demo" href="#">你好</a> -->
+</body>
+</html>
+
+

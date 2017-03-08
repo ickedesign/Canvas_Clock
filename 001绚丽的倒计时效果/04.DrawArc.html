@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DrawArc</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var canvas=document.getElementById('canvas');
+			var context=canvas.getContext('2d');
+			canvas.width=1024;
+			canvas.height=500;
+			context.lineWidth=4;
+			context.strokeStyle='blue';
+			/*context.arc(100,200,50,0,1.5*Math.PI,false);//默认为false
+			context.stroke();*/
+			for(var i=0;i<10;i++){
+				context.beginPath();
+				context.arc(10+i*100,55,45,0,2*(i+1)/10*Math.PI,false);
+				context.stroke();
+			}
+			context.fillStyle='#005588';
+			for(var i=0;i<10;i++){
+				context.beginPath();
+				context.arc(10+i*100,110,45,0,2*(i+1)/10*Math.PI,false);
+				context.stroke();
+				context.fill();
+			}
+			for(var i=0;i<10;i++){
+				context.beginPath();
+				context.arc(10+i*100,215,45,0,2*(i+1)/10*Math.PI,false);
+				context.closePath();
+				context.stroke();
+				context.fill();
+			}
+			for(var i=0;i<10;i++){
+				context.beginPath();
+				context.arc(10+i*100,320,45,0,2*(i+1)/10*Math.PI,false);
+				context.closePath();
+				context.stroke();
+				
+			}
+			for(var i=0;i<10;i++){
+				context.beginPath();
+				context.arc(10+i*100,425,45,0,2*(i+1)/10*Math.PI,true);//逆时针
+				
+				context.stroke();
+				
+			}
+
+		}
+	</script>
+</head>
+<body>
+	<canvas id="canvas" style="border: 1px solid #000;display: block;margin:30px auto">
+		此浏览器不支持canvas
+	</canvas>
+
+</body>
+</html>

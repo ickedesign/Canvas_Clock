@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>draw a line and the simple pattern</title>
+	<script type="text/javascript">
+		window.onload=function(){
+			var canvas=document.getElementById('canvas');
+			var context=canvas.getContext('2d');
+			context.beginPath();
+			context.moveTo(100,100);
+			context.lineTo(300,300);
+			context.lineTo(500,100);
+			context.lineTo(100,100);
+			context.closePath();
+			context.lineWidth=4;
+			context.strokeStyle='red';
+			context.stroke();
+			context.fillStyle='pink';
+			context.fill();
+			
+			//记得在两端加上这两个东西
+			context.beginPath();
+			context.moveTo(400,400);
+			context.lineTo(400,500);
+			context.lineWidth=10;
+			context.strokeStyle='blue';
+			context.stroke();
+			context.closePath();
+		}
+	</script>
+</head>
+<body>
+	<canvas id="canvas" height="500" width="1024" style="border: 1px solid #000;display: block;margin: 50px auto">
+		canvas不能在低于ie9的浏览器运行，请切换浏览器
+	</canvas>
+</body>
+</html>
